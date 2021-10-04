@@ -14,7 +14,7 @@ public class SignUp extends PageTemplate{
 	private String userXpath = "//*[@id=\"sign-username\"]";
 	private String passwordXpath = "//*[@id=\"sign-password\"]";
 	private String signUpBXpath = "//*[@id=\"signInModal\"]/div/div/div[3]/button[2]";
-	
+	public String textoAlertSignUpCorrect = "Sign up successful.";
 
 	public SignUp(WebDriver driver) {
 		super(driver);
@@ -36,6 +36,15 @@ public class SignUp extends PageTemplate{
 		
 	}
 	
+	public String textAlert() {
+		String textoAlert = new String();
+		WebDriverWait wait = new WebDriverWait(this.driver, 5);
+		wait.until(ExpectedConditions.alertIsPresent());
+		textoAlert = this.driver.switchTo().alert().getText();
+		this.driver.switchTo().alert().accept();
+		return textoAlert;
+		
+	}
 	public void acceptAlert() {
 		WebDriverWait wait = new WebDriverWait(this.driver, 5);
 		wait.until(ExpectedConditions.alertIsPresent());

@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 
 import demoBlaze.*;
@@ -19,13 +20,15 @@ public class tests {
 	protected ExcelData excel = new ExcelData();
 	
   @Test
-  public void f() throws IOException {
+  public void SignUp() throws IOException {
 	  String username = excel.username(1);
 	  String password = excel.password(1);
 	  driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
 	  SignUp sign = new SignUp(driver);
 	  sign.signingUp(username, password);
-	  sign.acceptAlert();
+	  String respuesta = sign.textAlert();
+	  Assert.assertEquals(respuesta, sign.textoAlertSignUpCorrect);
+	  
   }
   @BeforeTest
   public void beforeTest() {
