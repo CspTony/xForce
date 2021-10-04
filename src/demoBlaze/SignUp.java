@@ -33,23 +33,9 @@ public class SignUp extends PageTemplate{
 		passwordField.sendKeys(password);
 		WebElement signUpButton = this.driver.findElement(By.xpath(signUpBXpath));
 		signUpButton.click();
-		
 	}
 	
-	public String textAlert() {
-		String textoAlert = new String();
-		WebDriverWait wait = new WebDriverWait(this.driver, 5);
-		wait.until(ExpectedConditions.alertIsPresent());
-		textoAlert = this.driver.switchTo().alert().getText();
-		this.driver.switchTo().alert().accept();
-		return textoAlert;
-		
-	}
-	public void acceptAlert() {
-		WebDriverWait wait = new WebDriverWait(this.driver, 5);
-		wait.until(ExpectedConditions.alertIsPresent());
-		this.driver.switchTo().alert().accept();
-	}
+	
 	
 	
 }

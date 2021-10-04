@@ -18,18 +18,31 @@ public class tests {
 	
 	protected WebDriver driver = new ChromeDriver();
 	protected ExcelData excel = new ExcelData();
+	protected String respuesta;
 	
-  @Test
+  @Test(priority=10)
   public void SignUp() throws IOException {
 	  String username = excel.username(1);
 	  String password = excel.password(1);
 	  driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
 	  SignUp sign = new SignUp(driver);
 	  sign.signingUp(username, password);
-	  String respuesta = sign.textAlert();
+	  respuesta = sign.textAlert();
 	  Assert.assertEquals(respuesta, sign.textoAlertSignUpCorrect);
 	  
   }
+  //aqui va el test 2
+  
+  
+  @Test(priority=30)
+  public void Buy3atSame() throws IOException {
+	  
+	  Buy sign = new Buy(driver);
+	  driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
+	  respuesta = sign.Buy3atSame();
+	  Assert.assertEquals(respuesta, sign.AcceptanceText);
+  }
+  
   @BeforeTest
   public void beforeTest() {
   }
