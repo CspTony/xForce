@@ -8,6 +8,7 @@ public class PageTemplate {
 
 	protected WebDriver driver;
 	
+	//WebDriver Constructor
 	public PageTemplate(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -20,10 +21,12 @@ public class PageTemplate {
 		this.driver = driver;
 	}
 	
+	//Function to return to the last page of the website
 	public void goBack() {
 		this.driver.navigate().back();
 	}
 	
+	//Fruntion that obtains and return the text of an alert.
 	public String textAlert() {
 		String textoAlert = new String();
 		WebDriverWait wait = new WebDriverWait(this.driver, 5);
@@ -33,6 +36,7 @@ public class PageTemplate {
 		return textoAlert;
 		
 	}
+	//Function that accepts an alert.
 	public void acceptAlert() {
 		WebDriverWait wait = new WebDriverWait(this.driver, 5);
 		wait.until(ExpectedConditions.alertIsPresent());

@@ -54,6 +54,7 @@ public class LogIn extends PageTemplate {
 		wait.until(ExpectedConditions.visibilityOf(loggedUsername));
 		String nameOfUsername = loggedUsername.getText();
 		System.out.println(nameOfUsername);
+		
 		return nameOfUsername;
 	}
 	
