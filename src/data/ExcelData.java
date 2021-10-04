@@ -113,7 +113,7 @@ public class ExcelData {
 	 * */
 	
 	public String readData(int row, int column, int exsheet) throws IOException{
-		FileInputStream fs = new FileInputStream("datos de prueba.xlsx");
+		FileInputStream fs = new FileInputStream("TestData.xlsx");
 		//Creating a workbook
 		XSSFWorkbook workbook = new XSSFWorkbook(fs);
 		XSSFSheet sheet = workbook.getSheetAt(exsheet);
