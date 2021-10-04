@@ -18,6 +18,7 @@ public class SignUp extends PageTemplate{
 
 	public SignUp(WebDriver driver) {
 		super(driver);
+		this.driver.manage().window().maximize();
 		this.driver.get("https://www.demoblaze.com/");//Url
 	}
 	
@@ -34,8 +35,5 @@ public class SignUp extends PageTemplate{
 		WebElement signUpButton = this.driver.findElement(By.xpath(signUpBXpath));
 		signUpButton.click();
 	}
-	
-	
-	
 	
 }

@@ -22,8 +22,8 @@ public class tests {
 	
   @Test(priority=10)
   public void SignUp() throws IOException {
-	  String username = excel.username(1);
-	  String password = excel.password(1);
+	  String username = excel.username(0);
+	  String password = excel.password(0);
 	  driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
 	  SignUp sign = new SignUp(driver);
 	  sign.signingUp(username, password);
@@ -32,7 +32,15 @@ public class tests {
 	  
   }
   //aqui va el test 2
-  
+  @Test(priority = 20)
+  public void LogIn() throws IOException, InterruptedException {
+	  String username = excel.username(0);
+	  String password = excel.password(0);
+	  driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
+	  LogIn logIn = new LogIn(driver);
+	  logIn.logginIn(username, password);
+	  Assert.assertEquals(logIn.loggedIn(), "Welcome " + username);
+  }
   
   @Test(priority=30)
   public void Buy3atSame() throws IOException {
