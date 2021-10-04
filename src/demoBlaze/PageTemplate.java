@@ -38,5 +38,5 @@ public class PageTemplate {
 		wait.until(ExpectedConditions.alertIsPresent());
 		this.driver.switchTo().alert().accept();
 	}
-
+	
 }

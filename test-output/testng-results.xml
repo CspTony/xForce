@@ -1,30 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-10-04T02:44:53 CDT" name="Default suite" finished-at="2021-10-04T02:45:03 CDT" duration-ms="10346">
+  <suite started-at="2021-10-04T10:33:55 CDT" name="Default suite" finished-at="2021-10-04T10:34:04 CDT" duration-ms="8821">
     <groups>
     </groups>
-    <test started-at="2021-10-04T02:44:53 CDT" name="Default test" finished-at="2021-10-04T02:45:03 CDT" duration-ms="10346">
+    <test started-at="2021-10-04T10:33:55 CDT" name="Default test" finished-at="2021-10-04T10:34:04 CDT" duration-ms="8821">
       <class name="generalPakage.tests">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:generalPakage.tests@76c7beb3]" started-at="2021-10-04T02:44:53 CDT" name="beforeTest" finished-at="2021-10-04T02:44:53 CDT" duration-ms="5" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:generalPakage.tests@3f2ef586]" started-at="2021-10-04T10:33:55 CDT" name="beforeTest" finished-at="2021-10-04T10:33:55 CDT" duration-ms="6" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="SignUp()[pri:10, instance:generalPakage.tests@76c7beb3]" started-at="2021-10-04T02:44:53 CDT" name="SignUp" finished-at="2021-10-04T02:44:56 CDT" duration-ms="3038" status="FAIL">
+        <test-method signature="Buy3DiferentNoLogin()[pri:50, instance:generalPakage.tests@3f2ef586]" started-at="2021-10-04T10:33:55 CDT" name="Buy3DiferentNoLogin" finished-at="2021-10-04T10:34:04 CDT" duration-ms="8783" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[expected [Sign up successful.] but found [This user already exist.]]]>
+              <![CDATA[did not expect [Thank you for your purchase!] but found [Thank you for your purchase!]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [Sign up successful.] but found [This user already exist.]
+              <![CDATA[java.lang.AssertionError: did not expect [Thank you for your purchase!] but found [Thank you for your purchase!]
 at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertEqualsImpl(Assert.java:140)
-at org.testng.Assert.assertEquals(Assert.java:122)
-at org.testng.Assert.assertEquals(Assert.java:629)
-at org.testng.Assert.assertEquals(Assert.java:639)
-at generalPakage.tests.SignUp(tests.java:31)
+at org.testng.Assert.failEquals(Assert.java:1041)
+at org.testng.Assert.assertNotEqualsImpl(Assert.java:147)
+at org.testng.Assert.assertNotEquals(Assert.java:1531)
+at org.testng.Assert.assertNotEquals(Assert.java:1535)
+at generalPakage.tests.Buy3DiferentNoLogin(tests.java:72)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -58,16 +57,8 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SignUp -->
-        <test-method signature="LogIn()[pri:20, instance:generalPakage.tests@76c7beb3]" started-at="2021-10-04T02:44:56 CDT" name="LogIn" finished-at="2021-10-04T02:44:59 CDT" duration-ms="3270" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LogIn -->
-        <test-method signature="Buy3atSame()[pri:30, instance:generalPakage.tests@76c7beb3]" started-at="2021-10-04T02:44:59 CDT" name="Buy3atSame" finished-at="2021-10-04T02:45:03 CDT" duration-ms="3991" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Buy3atSame -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:generalPakage.tests@76c7beb3]" started-at="2021-10-04T02:45:03 CDT" name="afterTest" finished-at="2021-10-04T02:45:03 CDT" duration-ms="0" status="PASS">
+        </test-method> <!-- Buy3DiferentNoLogin -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:generalPakage.tests@3f2ef586]" started-at="2021-10-04T10:34:04 CDT" name="afterTest" finished-at="2021-10-04T10:34:04 CDT" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->

@@ -22,8 +22,8 @@ public class tests {
 	
   @Test(priority=10)
   public void SignUp() throws IOException {
-	  String username = excel.username(0);
-	  String password = excel.password(0);
+	  String username = excel.username(1);
+	  String password = excel.password(1);
 	  driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
 	  SignUp sign = new SignUp(driver);
 	  sign.signingUp(username, password);
@@ -44,11 +44,39 @@ public class tests {
   
   @Test(priority=30)
   public void Buy3atSame() throws IOException {
-	  
-	  Buy sign = new Buy(driver);
+	  String username = excel.username(1);
+	  String password = excel.password(1);
 	  driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
+	  LogIn logIn = new LogIn(driver);
+	  logIn.logginIn(username, password);
+	  Buy sign = new Buy(driver);
 	  respuesta = sign.Buy3atSame();
 	  Assert.assertEquals(respuesta, sign.AcceptanceText);
+  }
+  @Test(priority=40)
+  public void Buy3DiferentWithLogin() throws IOException {
+	  String username = excel.username(1);
+	  String password = excel.password(1);
+	  driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
+	  LogIn logIn = new LogIn(driver);
+	  logIn.logginIn(username, password);
+	  Buy sign = new Buy(driver);
+	  respuesta = sign.Buy3Diferent();
+	  Assert.assertEquals(respuesta, sign.AcceptanceText);
+  }
+  @Test(priority=50)
+  public void Buy3DiferentNoLogin() throws IOException {
+	  driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
+	  Buy sign = new Buy(driver);
+	  respuesta = sign.Buy3Diferent();
+	  Assert.assertNotEquals(respuesta, sign.AcceptanceText);
+  }
+  @Test(priority=60)
+  public void Buy3AtSameNoLogin() throws IOException {
+	  driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
+	  Buy sign = new Buy(driver);
+	  respuesta = sign.Buy3atSame();
+	  Assert.assertNotEquals(respuesta, sign.AcceptanceText);
   }
   
   @BeforeTest
