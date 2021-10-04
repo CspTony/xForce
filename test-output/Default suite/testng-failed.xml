@@ -5,7 +5,10 @@
     <classes>
       <class name="generalPakage.tests">
         <methods>
+          <include name="Buy3AtSameNoLogin"/>
           <include name="Buy3DiferentNoLogin"/>
+          <include name="SignUp"/>
+          <include name="afterSuite"/>
           <include name="afterTest"/>
           <include name="beforeTest"/>
         </methods>

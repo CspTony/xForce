@@ -1,17 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="6" passed="3" failed="3" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-10-04T10:33:55 CDT" name="Default suite" finished-at="2021-10-04T10:34:04 CDT" duration-ms="8821">
+  <suite started-at="2021-10-04T15:36:02 CDT" name="Default suite" finished-at="2021-10-04T15:36:29 CDT" duration-ms="27568">
     <groups>
     </groups>
-    <test started-at="2021-10-04T10:33:55 CDT" name="Default test" finished-at="2021-10-04T10:34:04 CDT" duration-ms="8821">
+    <test started-at="2021-10-04T15:36:02 CDT" name="Default test" finished-at="2021-10-04T15:36:29 CDT" duration-ms="27568">
       <class name="generalPakage.tests">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:generalPakage.tests@3f2ef586]" started-at="2021-10-04T10:33:55 CDT" name="beforeTest" finished-at="2021-10-04T10:33:55 CDT" duration-ms="6" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:generalPakage.tests@78aea4b9]" started-at="2021-10-04T15:36:02 CDT" name="beforeTest" finished-at="2021-10-04T15:36:02 CDT" duration-ms="5" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="Buy3DiferentNoLogin()[pri:50, instance:generalPakage.tests@3f2ef586]" started-at="2021-10-04T10:33:55 CDT" name="Buy3DiferentNoLogin" finished-at="2021-10-04T10:34:04 CDT" duration-ms="8783" status="FAIL">
+        <test-method signature="SignUp()[pri:10, instance:generalPakage.tests@78aea4b9]" started-at="2021-10-04T15:36:02 CDT" name="SignUp" finished-at="2021-10-04T15:36:06 CDT" duration-ms="4283" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [Sign up successful.] but found [This user already exist.]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [Sign up successful.] but found [This user already exist.]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+at org.testng.Assert.assertEquals(Assert.java:122)
+at org.testng.Assert.assertEquals(Assert.java:629)
+at org.testng.Assert.assertEquals(Assert.java:639)
+at generalPakage.tests.SignUp(tests.java:32)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SignUp -->
+        <test-method signature="LogIn()[pri:20, instance:generalPakage.tests@78aea4b9]" started-at="2021-10-04T15:36:06 CDT" name="LogIn" finished-at="2021-10-04T15:36:09 CDT" duration-ms="3069" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogIn -->
+        <test-method signature="Buy3atSame()[pri:30, instance:generalPakage.tests@78aea4b9]" started-at="2021-10-04T15:36:09 CDT" name="Buy3atSame" finished-at="2021-10-04T15:36:14 CDT" duration-ms="5278" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Buy3atSame -->
+        <test-method signature="Buy3DiferentWithLogin()[pri:40, instance:generalPakage.tests@78aea4b9]" started-at="2021-10-04T15:36:14 CDT" name="Buy3DiferentWithLogin" finished-at="2021-10-04T15:36:20 CDT" duration-ms="5956" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Buy3DiferentWithLogin -->
+        <test-method signature="Buy3DiferentNoLogin()[pri:50, instance:generalPakage.tests@78aea4b9]" started-at="2021-10-04T15:36:20 CDT" name="Buy3DiferentNoLogin" finished-at="2021-10-04T15:36:25 CDT" duration-ms="5076" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[did not expect [Thank you for your purchase!] but found [Thank you for your purchase!]]]>
@@ -23,7 +83,7 @@ at org.testng.Assert.failEquals(Assert.java:1041)
 at org.testng.Assert.assertNotEqualsImpl(Assert.java:147)
 at org.testng.Assert.assertNotEquals(Assert.java:1531)
 at org.testng.Assert.assertNotEquals(Assert.java:1535)
-at generalPakage.tests.Buy3DiferentNoLogin(tests.java:72)
+at generalPakage.tests.Buy3DiferentNoLogin(tests.java:73)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -58,10 +118,61 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Buy3DiferentNoLogin -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:generalPakage.tests@3f2ef586]" started-at="2021-10-04T10:34:04 CDT" name="afterTest" finished-at="2021-10-04T10:34:04 CDT" duration-ms="1" status="PASS">
+        <test-method signature="Buy3AtSameNoLogin()[pri:60, instance:generalPakage.tests@78aea4b9]" started-at="2021-10-04T15:36:25 CDT" name="Buy3AtSameNoLogin" finished-at="2021-10-04T15:36:29 CDT" duration-ms="3869" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[did not expect [Thank you for your purchase!] but found [Thank you for your purchase!]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: did not expect [Thank you for your purchase!] but found [Thank you for your purchase!]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failEquals(Assert.java:1041)
+at org.testng.Assert.assertNotEqualsImpl(Assert.java:147)
+at org.testng.Assert.assertNotEquals(Assert.java:1531)
+at org.testng.Assert.assertNotEquals(Assert.java:1535)
+at generalPakage.tests.Buy3AtSameNoLogin(tests.java:80)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Buy3AtSameNoLogin -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:generalPakage.tests@78aea4b9]" started-at="2021-10-04T15:36:29 CDT" name="afterTest" finished-at="2021-10-04T15:36:29 CDT" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:generalPakage.tests@78aea4b9]" started-at="2021-10-04T15:36:29 CDT" name="afterSuite" finished-at="2021-10-04T15:36:29 CDT" duration-ms="159" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
       </class> <!-- generalPakage.tests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 
 import demoBlaze.*;
@@ -50,7 +51,7 @@ public class tests {
 	  LogIn logIn = new LogIn(driver);
 	  logIn.logginIn(username, password);
 	  Buy sign = new Buy(driver);
-	  respuesta = sign.Buy3atSame();
+	  respuesta = sign.Buy3atSame(1);
 	  Assert.assertEquals(respuesta, sign.AcceptanceText);
   }
   @Test(priority=40)
@@ -61,21 +62,21 @@ public class tests {
 	  LogIn logIn = new LogIn(driver);
 	  logIn.logginIn(username, password);
 	  Buy sign = new Buy(driver);
-	  respuesta = sign.Buy3Diferent();
+	  respuesta = sign.Buy3Diferent(1);
 	  Assert.assertEquals(respuesta, sign.AcceptanceText);
   }
   @Test(priority=50)
   public void Buy3DiferentNoLogin() throws IOException {
 	  driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
 	  Buy sign = new Buy(driver);
-	  respuesta = sign.Buy3Diferent();
+	  respuesta = sign.Buy3Diferent(1);
 	  Assert.assertNotEquals(respuesta, sign.AcceptanceText);
   }
   @Test(priority=60)
   public void Buy3AtSameNoLogin() throws IOException {
 	  driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
 	  Buy sign = new Buy(driver);
-	  respuesta = sign.Buy3atSame();
+	  respuesta = sign.Buy3atSame(1);
 	  Assert.assertNotEquals(respuesta, sign.AcceptanceText);
   }
   
@@ -85,6 +86,11 @@ public class tests {
 
   @AfterTest
   public void afterTest() {
+  }
+  @AfterSuite
+  public void afterSuite() {
+	  driver.close();
+	  driver.quit();
   }
 
 }
