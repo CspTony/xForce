@@ -1,7 +1,5 @@
 package data;
 
-
-
 import java.io.FileInputStream;
 import java.io.IOException;
 
@@ -25,14 +23,22 @@ public class ExcelData {
 		return password;
 	}
 	
+	public String article_name(int i) throws IOException{
+		
+		String articulo = this.readData(i, 2, 1);
+		
+		return articulo;
+	}
+	
+	
 	public String readData(int row, int column, int exsheet) throws IOException{
 		FileInputStream fs = new FileInputStream("datos de prueba.xlsx");
 		//Creating a workbook
 		XSSFWorkbook workbook = new XSSFWorkbook(fs);
 		XSSFSheet sheet = workbook.getSheetAt(exsheet);
 		String value = sheet.getRow(row).getCell(column).getStringCellValue();
-		
 		workbook.close();
+		
 		return value;
 	}
 

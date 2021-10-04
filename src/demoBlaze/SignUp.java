@@ -33,7 +33,6 @@ public class SignUp extends PageTemplate{
 		passwordField.sendKeys(password);
 		WebElement signUpButton = this.driver.findElement(By.xpath(signUpBXpath));
 		signUpButton.click();
-		
 	}
 	
 	public void acceptAlert() {
