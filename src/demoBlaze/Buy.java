@@ -38,9 +38,18 @@ public class Buy extends PageTemplate {
 		NexusXpath =  "//a[text()='"+ed.article_name(3)+"']";
 		this.driver.get("https://www.demoblaze.com/");
 	}
-	
-	public String Buy3atSame(){
+	/*
+	 * Test Case Logic 
+	 * @userId (int) = user index in excel sheet
+	 * */
+	public String Buy3atSame(int userId) throws IOException{
 		String returnText;		
+		String userName = ed.userCompleteName(userId);
+		String country=  ed.userCountry(userId);
+		String city = ed.userCity(userId);
+		String cardNumber = ed.userCardNumber(userId);
+		String cardMonth = ed.userCardMonth(userId);
+		String cardYear = ed.userCardYear(userId);
 		WebDriverWait wait = new WebDriverWait(this.driver, 5);
 		WebElement samsungLink = this.driver.findElement(By.xpath(SamsungGalaxy6Xpath));
 		wait.until(ExpectedConditions.visibilityOf(samsungLink));
@@ -65,22 +74,22 @@ public class Buy extends PageTemplate {
 		placePrder.click(); 
 		WebElement nameInput = this.driver.findElement(By.xpath(NameInputXpath));
 		wait.until(ExpectedConditions.visibilityOf(nameInput));
-		nameInput.sendKeys("Luis Fernando Diaz");
+		nameInput.sendKeys(userName);
 		WebElement countryInput = this.driver.findElement(By.xpath(CountryInputXpath));
 		wait.until(ExpectedConditions.visibilityOf(countryInput));
-		countryInput.sendKeys("Mexico");
+		countryInput.sendKeys(country);
 		WebElement CityInput = this.driver.findElement(By.xpath(CityInputXpath));
 		wait.until(ExpectedConditions.visibilityOf(CityInput));
-		CityInput.sendKeys("Aguascalientes");
+		CityInput.sendKeys(city);
 		WebElement CreditCardInput = this.driver.findElement(By.xpath(CreditCardInputXpath));
 		wait.until(ExpectedConditions.visibilityOf(CreditCardInput));
-		CreditCardInput.sendKeys("4573123447582745");
+		CreditCardInput.sendKeys(cardNumber);
 		WebElement MonthCardInput = this.driver.findElement(By.xpath(MothInputXpath));
 		wait.until(ExpectedConditions.visibilityOf(MonthCardInput));
-		MonthCardInput.sendKeys("12");
+		MonthCardInput.sendKeys(cardMonth);
 		WebElement YearCardInput = this.driver.findElement(By.xpath(YearInputXpath));
 		wait.until(ExpectedConditions.visibilityOf(YearCardInput));
-		YearCardInput.sendKeys("2024");
+		YearCardInput.sendKeys(cardYear);
 		WebElement buttonPurchase = this.driver.findElement(By.xpath(buttonPurchaseXpath));
 		wait.until(ExpectedConditions.visibilityOf(buttonPurchase));
 		buttonPurchase.click();
@@ -92,8 +101,14 @@ public class Buy extends PageTemplate {
 		}
 		return returnText;
 	}
-	public String Buy3Diferent(){
+	public String Buy3Diferent(int userId) throws IOException{
 		String returnText;		
+		String userName = ed.userCompleteName(userId);
+		String country=  ed.userCountry(userId);
+		String city = ed.userCity(userId);
+		String cardNumber = ed.userCardNumber(userId);
+		String cardMonth = ed.userCardMonth(userId);
+		String cardYear = ed.userCardYear(userId);
 		WebDriverWait wait = new WebDriverWait(this.driver, 5);
 		//primero
 		WebElement samsungLink = this.driver.findElement(By.xpath(SamsungGalaxy6Xpath));
@@ -133,22 +148,22 @@ public class Buy extends PageTemplate {
 		placePrder.click(); 
 		WebElement nameInput = this.driver.findElement(By.xpath(NameInputXpath));
 		wait.until(ExpectedConditions.visibilityOf(nameInput));
-		nameInput.sendKeys("Luis Fernando Diaz");
+		nameInput.sendKeys(userName);
 		WebElement countryInput = this.driver.findElement(By.xpath(CountryInputXpath));
 		wait.until(ExpectedConditions.visibilityOf(countryInput));
-		countryInput.sendKeys("Mexico");
+		countryInput.sendKeys(country);
 		WebElement CityInput = this.driver.findElement(By.xpath(CityInputXpath));
 		wait.until(ExpectedConditions.visibilityOf(CityInput));
-		CityInput.sendKeys("Aguascalientes");
+		CityInput.sendKeys(city);
 		WebElement CreditCardInput = this.driver.findElement(By.xpath(CreditCardInputXpath));
 		wait.until(ExpectedConditions.visibilityOf(CreditCardInput));
-		CreditCardInput.sendKeys("4573123447582745");
+		CreditCardInput.sendKeys(cardNumber);
 		WebElement MonthCardInput = this.driver.findElement(By.xpath(MothInputXpath));
 		wait.until(ExpectedConditions.visibilityOf(MonthCardInput));
-		MonthCardInput.sendKeys("12");
+		MonthCardInput.sendKeys(cardMonth);
 		WebElement YearCardInput = this.driver.findElement(By.xpath(YearInputXpath));
 		wait.until(ExpectedConditions.visibilityOf(YearCardInput));
-		YearCardInput.sendKeys("2024");
+		YearCardInput.sendKeys(cardYear);
 		WebElement buttonPurchase = this.driver.findElement(By.xpath(buttonPurchaseXpath));
 		wait.until(ExpectedConditions.visibilityOf(buttonPurchase));
 		buttonPurchase.click();
