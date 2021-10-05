@@ -89,6 +89,8 @@ public class tests {
 	// Realizamos la apertura de la pestaña en modo incognito
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--incognito");
+		options.addArguments("--disable-popup-blocking");
+		options.addArguments("--disable-extensions");
 		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 		capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 		driver = new ChromeDriver(capabilities);
